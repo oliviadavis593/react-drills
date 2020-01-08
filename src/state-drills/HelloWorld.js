@@ -1,28 +1,21 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-class HelloWorld extends React.Component {
-    constructor() {
-        super(props)
-        this.state = {
-            who: 'World'
-        }
-    }
-
-    handleButtonClick = () => {
-
-    }
+class HelloWorld extends Component {
+    state = {
+        who: 'World',
+    };
 
     render() {
         return(
-            <div>
-                <p>Hello, {this.props.who}</p>
-                <button onClick={() => this.handleButtonClick}>
+            <div className="HelloWorld">
+                <p>Hello, {this.state.who}!</p>
+                <button onClick={() => this.setState({who: 'world'})}>
 
                 </button>
-                <button onClick={() => this.handleButtonClick}>
+                <button onClick={() => this.setState({who: 'friend'})}>
 
                 </button>
-                <button onClick={() => this.handleButtonClick}>
+                <button onClick={() => this.setState({who: 'React'})}>
 
                 </button>
             </div>
